@@ -14,7 +14,15 @@ def next_ten_numbers(num):
     return ",".join(str(num + i) for i in range(1, 11))
 
 def list_to_comma_string(lst):
-    
+    """
+    Convert a list of strings into a single comma-delimited string.
+
+    Args:
+        lst (list): A list of strings.
+
+    Returns:
+        str: A comma-delimited string of the input list.
+    """ 
     return ",".join(lst)
 
 
