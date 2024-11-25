@@ -25,7 +25,13 @@ def list_to_comma_string(lst):
     """ 
     return ",".join(lst)
 
-
+def write_to_csv(headers, data, file_name):
+    
+    rows = data.split(",")
+    with open(file_name, mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(headers)
+        writer.writerow(rows)
 
 
 
