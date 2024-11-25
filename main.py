@@ -13,7 +13,9 @@ def next_ten_numbers(num):
     """
     return ",".join(str(num + i) for i in range(1, 11))
 
-
+def list_to_comma_string(lst):
+    
+    return ",".join(lst)
 
 
 
