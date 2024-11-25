@@ -26,28 +26,22 @@ def list_to_comma_string(lst):
     return ",".join(lst)
 
 def write_to_csv(headers, data, file_name):
-    
+    """
+    Write headers and data to a CSV file.
+
+    Args:
+        headers (list): List of headers for the CSV file.
+        data (str): Comma-delimited string containing the data rows.
+        file_name (str): The name of the file where the CSV will be written.
+
+    Returns:
+        None
+    """ 
     rows = data.split(",")
     with open(file_name, mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(headers)
         writer.writerow(rows)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def test_should_return_next_ten_numbers():
     assert next_ten_numbers(5) == "6,7,8,9,10,11,12,13,14,15"
