@@ -2,6 +2,15 @@ import os
 import csv
 
 def next_ten_numbers(num):
+    """
+    Generate the next 10 numbers as a comma-delimited string starting from the given number.
+
+    Args:
+        num (int): The starting number.
+
+    Returns:
+        str: A comma-delimited string of the next 10 numbers.
+    """
     return ",".join(str(num + i) for i in range(1, 11))
 
 
