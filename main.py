@@ -52,3 +52,16 @@ def test_list_to_comma_string():
     assert list_to_comma_string(["a", "b", "c"]) == "a,b,c"
     assert list_to_comma_string(["1", "2", "3"]) == "1,2,3"
     assert list_to_comma_string([]) == ""
+
+def test_write_to_csv(tmp_path):
+    headers = ["Number"]
+    data = "6,7,8,9,10,11,12,13,14,15"
+    file_name = tmp_path / "test.csv"
+    
+    write_to_csv(headers, data, file_name)
+    
+    # Verify the file content
+    with open(file_name, mode="r") as file:
+        lines = file.readlines()
+        assert lines[0].strip() == "Number"
+        assert lines[1].strip() == "6,7,8,9,10,11,12,13,14,15"
